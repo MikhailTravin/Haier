@@ -536,7 +536,7 @@ a {
 .form__input {
   position: relative;
   border-radius: 10px;
-  background: #fbfbfb;
+  background: rgba(237, 237, 237, 0.6);
   border: 1px solid transparent;
   height: 52px;
   -webkit-transition: border 0.3s;
@@ -727,16 +727,10 @@ a {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  text-overflow: ellipsis;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
 }
 .select__text {
   -webkit-box-flex: 1;
@@ -1743,10 +1737,14 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;
+  opacity: 0;
 }
 .lock body {
   overflow: hidden;
   padding: 0px 0px 0px 0px !important;
+}
+.loaded body {
+  opacity: 1;
 }
 body.hide-scrollbar {
   margin: 0px 0px 0px 0px !important;
@@ -2520,7 +2518,7 @@ a {
 }
 .block-benefits1__column {
   position: relative;
-  background: #fcfcfc;
+  background: rgba(237, 237, 237, 0.6);
   border-radius: 30px;
   padding: 35px 30px 40px 40px;
   display: -webkit-box;

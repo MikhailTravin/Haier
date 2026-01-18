@@ -1594,7 +1594,11 @@ if (document.querySelector('.block-intro__slider')) {
     spaceBetween: 0,
     loop: true,
     lazy: true,
-    speed: 400,
+    speed: 800,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true
+    },
     autoplay: {
       delay: 3000,
     },
@@ -1829,6 +1833,10 @@ if (document.querySelector('.block-materials__slider')) {
     loop: true,
     lazy: true,
     speed: 400,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true
+    },
     navigation: {
       prevEl: '.block-materials-arrow-prev',
       nextEl: '.block-materials-arrow-next',
@@ -1957,3 +1965,10 @@ if (iconMenu) {
     }
   });
 }
+
+//========================================================================================================================================================
+
+// Добавляем класс 'loaded' после полной загрузки страницы
+window.addEventListener('load', function () {
+  document.documentElement.classList.add('loaded');
+});

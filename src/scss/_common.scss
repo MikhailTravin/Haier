@@ -4,9 +4,13 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;
+  opacity: 0;
   .lock & {
     overflow: hidden;
     padding: 0px 0px 0px 0px !important;
+  }
+  .loaded & {
+    opacity: 1;
   }
   &.hide-scrollbar {
     margin: 0px 0px 0px 0px !important;

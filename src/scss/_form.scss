@@ -15,7 +15,7 @@
     &__input {
         position: relative;
         border-radius: 10px;
-        background: #fbfbfb;
+        background: rgb(237, 237, 237, 0.6);
         border: 1px solid transparent;
         height: 52px;
         transition: border 0.3s;
@@ -166,13 +166,10 @@
     // .select__content
     &__content {
         flex: 1 1 auto;
-        text-overflow: ellipsis;
-        display: flex;
-        align-items: center;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
+        white-space: nowrap;
         overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
     }
     // .select__text
     &__text {
