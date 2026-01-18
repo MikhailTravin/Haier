@@ -572,7 +572,7 @@
         min-height: 48px;
       }
       img {
-        filter: invert(18%) sepia(100%) saturate(6243%) hue-rotate(253deg) brightness(97%) contrast(92%);
+        transform: rotate(0deg);
       }
       &:hover {
         background-color: var(--theme-color-accent);
@@ -1700,7 +1700,7 @@
         margin: 10px 0px 0px 0px;
       }
       img {
-        filter: invert(18%) sepia(100%) saturate(6243%) hue-rotate(253deg) brightness(97%) contrast(92%);
+        transform: rotate(0deg);
       }
       &:hover {
         background-color: var(--theme-color-accent);
@@ -1884,12 +1884,12 @@
       gap: 40px;
     }
     .salon-options {
-      margin: 0px 0px 0px 0px;
+      margin: 0px 0px 3px 0px;
     }
     .select-salon__simplebar {
       max-height: 646px;
       @media (max-width: 992px) {
-        max-height: 420px;
+        max-height: 340px;
       }
     }
     .salon-options__map {

@@ -2976,8 +2976,8 @@ a {
   }
 }
 .block-portfolio1 .heading-complex__buttons .btn img {
-  -webkit-filter: invert(18%) sepia(100%) saturate(6243%) hue-rotate(253deg) brightness(97%) contrast(92%);
-          filter: invert(18%) sepia(100%) saturate(6243%) hue-rotate(253deg) brightness(97%) contrast(92%);
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 .block-portfolio1 .heading-complex__buttons .btn:hover {
   background-color: var(--theme-color-accent);
@@ -4447,8 +4447,8 @@ a {
   }
 }
 .block-payment__content .btn img {
-  -webkit-filter: invert(18%) sepia(100%) saturate(6243%) hue-rotate(253deg) brightness(97%) contrast(92%);
-          filter: invert(18%) sepia(100%) saturate(6243%) hue-rotate(253deg) brightness(97%) contrast(92%);
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 .block-payment__content .btn:hover {
   background-color: var(--theme-color-accent);
@@ -4687,14 +4687,14 @@ a {
   gap: 40px;
 }
 .block-showrooms__left .salon-options {
-  margin: 0px 0px 0px 0px;
+  margin: 0px 0px 3px 0px;
 }
 .block-showrooms__left .select-salon__simplebar {
   max-height: 646px;
 }
 @media (max-width: 992px) {
   .block-showrooms__left .select-salon__simplebar {
-    max-height: 420px;
+    max-height: 340px;
   }
 }
 .block-showrooms__left .salon-options__map {
