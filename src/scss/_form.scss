@@ -387,16 +387,19 @@
             height: 24px;
             flex: 0 0 24px;
         }
-        p {
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 120%;
-            &.grey {
-                color: #a4a2a3;
-            }
-            @media (max-width: 600px) {
-                font-size: 14px;
-            }
+    }
+
+    // .salon-options__text
+
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        &.grey {
+            color: #a4a2a3;
+        }
+        @media (max-width: 600px) {
+            font-size: 14px;
         }
     }
 
