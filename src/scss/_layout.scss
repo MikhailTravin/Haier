@@ -15,6 +15,15 @@
 .main {
   flex-grow: 1;
   flex-shrink: 1;
+  &.main-other {
+    margin: 152px 0px 0px 0px;
+    @media (max-width: 1200px) {
+      margin: 108px 0px 0px 0px;
+    }
+    @media (max-width: 768px) {
+      margin: 45px 0px 0px 0px;
+    }
+  }
 }
 
 .container {
