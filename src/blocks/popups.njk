@@ -1,0 +1,113 @@
+<div id="free-measurement" aria-hidden="true" class="popup">
+    <div class="popup__wrapper">
+        <div class="popup__content">
+            <div data-close class="popup__close">
+                <img loading="lazy" src="img/icon/close.svg" alt="">
+            </div>
+            <div class="popup__body">
+                <div class="popup__top">
+                    <div class="popup__title">Бесплатный замер</div>
+                    <p class="text">
+                        Отправьте заявку и наш специалист
+                        <br>
+                        свяжется с Вами в ближайшее время
+                    </p>
+                </div>
+                <form data-dev data-popup-message="#thanks" action="#" class="form">
+                    <div class="form__inputs">
+                        <div class="form__input">
+                            <input data-required autocomplete="off" type="text" name="form[]" placeholder="Имя">
+                        </div>
+                        <div class="form__input tel">
+                            <div class="form__placeholder">Номер телефона</div>
+                            <input data-required autocomplete="off" type="text" name="form[]" placeholder="Телефон"
+                                class="telephone">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-violet disabled">
+                        <span>Отправить</span>
+                    </button>
+                    <div class="form__text">
+                        Нажимая на кнопку «Отправить», я принимаю условия пользовательского соглашения, даю свое
+                        согласие на <a href="./">обработку персональных данных</a> и подтверждаю ознакомление с <a
+                            href="./">политикой обработки
+                            персональных данных</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="thanks" aria-hidden="true" class="popup popup-thanks">
+    <div class="popup__wrapper">
+        <div class="popup__content">
+            <div data-close class="popup__close">
+                <img loading="lazy" src="img/icon/close.svg" alt="">
+            </div>
+            <div class="popup__body">
+                <div class="popup__top">
+                    <div class="popup__title">Спасибо!</div>
+                    <div class="popup__subtitle">
+                        Ваша заявка принята
+                    </div>
+                    <p class="text">
+                        Наш менеджер свяжется с вами
+                        <br>
+                        в ближайшее время, ожидайте
+                    </p>
+                </div>
+                <button data-close type="button" class="btn btn-violet">
+                    <span>Хорошо</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="leave-request" aria-hidden="true" class="popup">
+    <div class="popup__wrapper">
+        <div class="popup__content">
+            <div data-close class="popup__close">
+                <img loading="lazy" src="img/icon/close.svg" alt="">
+            </div>
+            <div class="popup__body">
+                <div class="popup__top">
+                    <div class="popup__title">Запись в салон</div>
+                    <p class="text">
+                        Отправьте заявку и наш специалист
+                        <br>
+                        свяжется с Вами в ближайшее время
+                    </p>
+                </div>
+                <form data-dev data-popup-message="#thanks" action="#" class="form">
+                    <div class="form__inputs">
+                        <div data-popup="#select-salon" class="form__input select-input">
+                            <div class="form__placeholder">Выбранный салон</div>
+                            <input data-required autocomplete="off" type="text" name="form[]"
+                                placeholder="Выберите салон">
+                            <img loading="lazy" src="img/icon/arrow1.svg" alt="">
+                        </div>
+                        <div class="form__input">
+                            <input data-required autocomplete="off" type="text" name="form[]" placeholder="Имя">
+                        </div>
+                        <div class="form__input tel">
+                            <div class="form__placeholder">Номер телефона</div>
+                            <input data-required autocomplete="off" type="text" name="form[]" placeholder="Телефон"
+                                class="telephone">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-violet disabled">
+                        <span>Записаться</span>
+                    </button>
+                    <div class="form__text">
+                        Нажимая на кнопку «Отправить», я принимаю условия пользовательского соглашения, даю свое
+                        согласие на <a href="./">обработку персональных данных</a> и подтверждаю ознакомление с <a
+                            href="./">политикой обработки
+                            персональных данных</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

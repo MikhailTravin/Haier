@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Каталог</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header-white.njk' %}
+        <main class="main main-other">
+
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Главная
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Кухни
+                            </a>
+                        </li>
+                        <li><span>Классические кухни</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block-products block2">
+                <div class="container">
+                    <div class="block-products__heading heading2">
+                        <h2 class="block-products__title">
+                            Современные кухни
+                        </h2>
+                    </div>
+                    <div class="block-catalog-filter">
+                        <div class="block-catalog-filter__left">
+                            <div class="block-catalog-filter__button">
+                                <img src="img/icon/filter.svg" alt="">
+                                <span>Фильтры</span>
+                            </div>
+                            <div class="block-catalog-filter__body">
+                                <div class="catalog-filter-spollers__top-mob">
+                                    <div class="catalog-filter-spollers__name">Подбор по параметрам</div>
+                                    <div class="catalog-filter-spollers__close">
+                                        <img src="img/icon/close2.svg" alt="">
+                                    </div>
+                                </div>
+                                <div data-spollers="992,max" class="catalog-filter-spollers">
+                                    <div class="catalog-filter-spollers__item">
+                                        <button type="button" data-spoller class="catalog-filter-spollers__button">
+                                            <img src="img/icon/style.svg" alt="" class="image1">
+                                            <span>Стиль</span>
+                                            <span class="catalog-filter-spollers__number"></span>
+                                            <img src="img/icon/arrow2.svg" alt="" class="image2">
+                                        </button>
+                                        <div class="catalog-filter-spollers__body">
+                                            <div class="catalog-filter-spollers__content">
+                                                <div class="catalog-filter-spollers__titles">
+                                                    <div class="catalog-filter-spollers__title">
+                                                        Материал
+                                                    </div>
+                                                    <div class="catalog-filter-spollers__close">
+                                                        <img loading="lazy" src="img/icon/close2.svg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="catalog-filter-spollers__checkboxes">
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="1"
+                                                            name="checkbox1">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">МДФ + эмаль</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="2"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Массив бука</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="3"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Массив дуба</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="4"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Шпон дуба</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="5"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Экоплита + ДСП + Эмаль
+                                                                глянец</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="6"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">МДФ</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="7"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Экомембрана</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="8"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Экомассив</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="9"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Экоплита</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="10"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">МДФ + экомембрана</span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="catalog-filter-spollers__buttons">
+                                                    <a href="./" class="btn btn-border disabled btn-delete">Сбросить</a>
+                                                    <a href="./" class="btn btn-violet">Применить</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="catalog-filter-spollers__item">
+                                        <button type="button" data-spoller class="catalog-filter-spollers__button">
+                                            <img src="img/icon/materials.svg" alt="" class="image1">
+                                            <span>Материал</span>
+                                            <span class="catalog-filter-spollers__number"></span>
+                                            <img src="img/icon/arrow2.svg" alt="" class="image2">
+                                        </button>
+                                        <div class="catalog-filter-spollers__body">
+                                            <div class="catalog-filter-spollers__content">
+                                                <div class="catalog-filter-spollers__titles">
+                                                    <div class="catalog-filter-spollers__title">
+                                                        Материал
+                                                    </div>
+                                                    <div class="catalog-filter-spollers__close">
+                                                        <img loading="lazy" src="img/icon/close2.svg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="catalog-filter-spollers__checkboxes">
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="1"
+                                                            name="checkbox1">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">МДФ + эмаль</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="2"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Массив бука</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="3"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Массив дуба</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="4"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Шпон дуба</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="5"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Экоплита + ДСП + Эмаль
+                                                                глянец</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="6"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">МДФ</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="7"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Экомембрана</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="8"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Экомассив</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="9"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">Экоплита</span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox__item">
+                                                        <input hidden class="checkbox__input" type="checkbox" value="10"
+                                                            name="checkbox2">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__text">МДФ + экомембрана</span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="catalog-filter-spollers__buttons">
+                                                    <a href="./" class="btn btn-border disabled btn-delete">Сбросить</a>
+                                                    <a href="./" class="btn btn-violet">Применить</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="catalog-filter-spollers__buttons-mob">
+                                        <div class="catalog-filter-spollers__reset">
+                                            <img src="img/icon/close2.svg" alt="">
+                                            <span>Сбросить</span>
+                                        </div>
+                                        <button type="button" class="btn btn-violet">Применить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-catalog-filter__right">
+                            <div class="block-catalog-filter__sorting">
+                                Сортировка:
+                            </div>
+                            <select name="select1" class="select1">
+                                <option value="1" selected>Популярные</option>
+                                <option value="2">Популярные2</option>
+                                <option value="3">Популярные3</option>
+                                <option value="4">Популярные4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="block-products__content">
+                        <div class="block-products__cards">
+                            <div class="card-product">
+                                <div class="card-product__swiper">
+                                    <a href="./" class="card-product__slider swiper">
+                                        <div class="card-product__wrapper swiper-wrapper">
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="card-product__badges2">
+                                        <div class="card-product__badge2">
+                                            Под заказ от 20 дней
+                                        </div>
+                                    </div>
+                                    <div class="card-product__badges">
+                                        <div class="card-product__badge">Угловая с полуостровом</div>
+                                        <div class="card-product__badge">Без шкафов</div>
+                                        <div class="card-product__badge">С барной стойкой</div>
+                                    </div>
+                                    <div class="slider-nav__arrow-prev card-product-arrow-prev">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                    <div class="slider-nav__arrow-next card-product-arrow-next">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="card-product__items">
+                                    <div class="card-product__top">
+                                        <a href="./" class="card-product__titles">
+                                            <div class="card-product__title">Современные кухни</div>
+                                            <div class="card-product__name">Lazer</div>
+                                        </a>
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-product__bottom">
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-product__buttons">
+                                            <a href="./" class="btn btn-white">Заказать проект</a>
+                                            <a href="./" class="btn btn-border">Подробнее</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-product">
+                                <div class="card-product__swiper">
+                                    <a href="./" class="card-product__slider swiper">
+                                        <div class="card-product__wrapper swiper-wrapper">
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="card-product__badges2">
+                                        <div class="card-product__badge2">
+                                            Под заказ от 20 дней
+                                        </div>
+                                    </div>
+                                    <div class="card-product__badges">
+                                        <div class="card-product__badge">Угловая с полуостровом</div>
+                                        <div class="card-product__badge">Без шкафов</div>
+                                        <div class="card-product__badge">С барной стойкой</div>
+                                    </div>
+                                    <div class="slider-nav__arrow-prev card-product-arrow-prev">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                    <div class="slider-nav__arrow-next card-product-arrow-next">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="card-product__items">
+                                    <div class="card-product__top">
+                                        <a href="./" class="card-product__titles">
+                                            <div class="card-product__title">Современные кухни</div>
+                                            <div class="card-product__name">Lazer</div>
+                                        </a>
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-product__bottom">
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-product__buttons">
+                                            <a href="./" class="btn btn-white">Заказать проект</a>
+                                            <a href="./" class="btn btn-border">Подробнее</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-banner5">
+                                <div class="block-banner5__content">
+                                    <img loading="lazy" src="img/bg6.webp" alt="" class="block-banner5__bg">
+                                    <div class="block-banner5__body">
+                                        <div class="block-banner5__title">
+                                            Узнайте стоимость
+                                            вашей будущей кухни
+                                            и забронируйте подарок!
+                                        </div>
+                                        <p>
+                                            До 22 декабря дарим Haier Robot Vacuum<br>
+                                            Умный робот-пылесос при заказе кухни
+                                        </p>
+                                        <a href="./" data-popup="calc" class="btn btn-violet">Рассчитать стоимость
+                                            кухни</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-product">
+                                <div class="card-product__swiper">
+                                    <a href="./" class="card-product__slider swiper">
+                                        <div class="card-product__wrapper swiper-wrapper">
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="card-product__badges2">
+                                        <div class="card-product__badge2">
+                                            Под заказ от 20 дней
+                                        </div>
+                                    </div>
+                                    <div class="card-product__badges">
+                                        <div class="card-product__badge">Угловая с полуостровом</div>
+                                        <div class="card-product__badge">Без шкафов</div>
+                                        <div class="card-product__badge">С барной стойкой</div>
+                                    </div>
+                                    <div class="slider-nav__arrow-prev card-product-arrow-prev">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                    <div class="slider-nav__arrow-next card-product-arrow-next">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="card-product__items">
+                                    <div class="card-product__top">
+                                        <a href="./" class="card-product__titles">
+                                            <div class="card-product__title">Современные кухни</div>
+                                            <div class="card-product__name">Lazer</div>
+                                        </a>
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-product__bottom">
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-product__buttons">
+                                            <a href="./" class="btn btn-white">Заказать проект</a>
+                                            <a href="./" class="btn btn-border">Подробнее</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-product">
+                                <div class="card-product__swiper">
+                                    <a href="./" class="card-product__slider swiper">
+                                        <div class="card-product__wrapper swiper-wrapper">
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="card-product__badges2">
+                                        <div class="card-product__badge2">
+                                            Под заказ от 20 дней
+                                        </div>
+                                    </div>
+                                    <div class="card-product__badges">
+                                        <div class="card-product__badge">Угловая с полуостровом</div>
+                                        <div class="card-product__badge">Без шкафов</div>
+                                        <div class="card-product__badge">С барной стойкой</div>
+                                    </div>
+                                    <div class="slider-nav__arrow-prev card-product-arrow-prev">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                    <div class="slider-nav__arrow-next card-product-arrow-next">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="card-product__items">
+                                    <div class="card-product__top">
+                                        <a href="./" class="card-product__titles">
+                                            <div class="card-product__title">Современные кухни</div>
+                                            <div class="card-product__name">Lazer</div>
+                                        </a>
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-product__bottom">
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-product__buttons">
+                                            <a href="./" class="btn btn-white">Заказать проект</a>
+                                            <a href="./" class="btn btn-border">Подробнее</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-product">
+                                <div class="card-product__swiper">
+                                    <a href="./" class="card-product__slider swiper">
+                                        <div class="card-product__wrapper swiper-wrapper">
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="card-product__badges2">
+                                        <div class="card-product__badge2">
+                                            Под заказ от 20 дней
+                                        </div>
+                                    </div>
+                                    <div class="card-product__badges">
+                                        <div class="card-product__badge">Угловая с полуостровом</div>
+                                        <div class="card-product__badge">Без шкафов</div>
+                                        <div class="card-product__badge">С барной стойкой</div>
+                                    </div>
+                                    <div class="slider-nav__arrow-prev card-product-arrow-prev">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                    <div class="slider-nav__arrow-next card-product-arrow-next">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="card-product__items">
+                                    <div class="card-product__top">
+                                        <a href="./" class="card-product__titles">
+                                            <div class="card-product__title">Современные кухни</div>
+                                            <div class="card-product__name">Lazer</div>
+                                        </a>
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-product__bottom">
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-product__buttons">
+                                            <a href="./" class="btn btn-white">Заказать проект</a>
+                                            <a href="./" class="btn btn-border">Подробнее</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-product">
+                                <div class="card-product__swiper">
+                                    <a href="./" class="card-product__slider swiper">
+                                        <div class="card-product__wrapper swiper-wrapper">
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                            <div class="card-product__slide swiper-slide">
+                                                <img loading="lazy" src="img/image12.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="card-product__badges2">
+                                        <div class="card-product__badge2">
+                                            Под заказ от 20 дней
+                                        </div>
+                                    </div>
+                                    <div class="card-product__badges">
+                                        <div class="card-product__badge">Угловая с полуостровом</div>
+                                        <div class="card-product__badge">Без шкафов</div>
+                                        <div class="card-product__badge">С барной стойкой</div>
+                                    </div>
+                                    <div class="slider-nav__arrow-prev card-product-arrow-prev">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                    <div class="slider-nav__arrow-next card-product-arrow-next">
+                                        <img src="img/icon/arrow2.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="card-product__items">
+                                    <div class="card-product__top">
+                                        <a href="./" class="card-product__titles">
+                                            <div class="card-product__title">Современные кухни</div>
+                                            <div class="card-product__name">Lazer</div>
+                                        </a>
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-product__bottom">
+                                        <ul class="card-product__list">
+                                            <li>
+                                                <span>Материал:</span> МДФ + экомембрана
+                                            </li>
+                                            <li>
+                                                <span>Цвет:</span> Белый и Древесина Графит
+                                            </li>
+                                        </ul>
+                                        <div class="card-product__prices">
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Маленькая 3м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>189 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-product__price">
+                                                <div class="card-product__price-title">Большая 6м:</div>
+                                                <div class="card-product__summ">
+                                                    <span>289 000 ₽</span>
+                                                    <div class="card-product-info">
+                                                        <div class="card-product-info__button">
+                                                            <img loading="lazy" src="img/icon/info.svg" alt="">
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-product__buttons">
+                                            <a href="./" class="btn btn-white">Заказать проект</a>
+                                            <a href="./" class="btn btn-border">Подробнее</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-pagination">
+                            <button type="button" class="btn btn-border">
+                                <span>Показать еще</span>
+                                <img loading="lazy" src="img/icon/edit.svg" alt="">
+                            </button>
+                            <div class="pagging">
+                                <span class="pagging__item_nav pagging__item_nav-prev">
+                                    <img loading="lazy" src="img/icon/arrow3.svg" alt="">
+                                </span>
+                                <a class="pagging__item pagging__item_active" href="./">1</a>
+                                <a class="pagging__item" href="./">2</a>
+                                <a class="pagging__item" href="./">3</a>
+                                <a class="pagging__item pagging__item_ellipsis" href="./">...</a>
+                                <a class="pagging__item" href="./">15</a>
+                                <a class="pagging__item_nav  pagging__item_nav-next" href="./">
+                                    <img loading="lazy" src="img/icon/arrow3.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'blocks/forms.njk' %}
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    {% include 'blocks/popups.njk' %}
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>
