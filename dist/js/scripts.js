@@ -404,6 +404,10 @@ function formFieldsInit(options = { viewPass: true, autoHeight: false }) {
       const submitButton = form.querySelector('button[type="submit"]');
       if (!submitButton) return;
 
+      const hadDisabledClass = submitButton.hasInitialDisabled;
+
+      if (!hadDisabledClass) return;
+
       const requiredFields = form.querySelectorAll('[data-required]');
       let allFilled = true;
 
@@ -441,6 +445,11 @@ function formFieldsInit(options = { viewPass: true, autoHeight: false }) {
       }
     });
   }
+
+  const allSubmitButtons = document.querySelectorAll('button[type="submit"]');
+  allSubmitButtons.forEach(button => {
+    button.hasInitialDisabled = button.classList.contains('disabled');
+  });
 
   document.body.addEventListener("focusin", function (e) {
     const targetElement = e.target;
@@ -524,11 +533,6 @@ function formFieldsInit(options = { viewPass: true, autoHeight: false }) {
   }, 100);
 }
 
-formFieldsInit({
-  viewPass: true,
-  autoHeight: false
-});
-
 let formValidate = {
   getErrors(form) {
     let error = 0;
@@ -586,6 +590,10 @@ let formValidate = {
     if (form) {
       const submitButton = form.querySelector('button[type="submit"]');
       if (submitButton) {
+        const hadDisabledClass = submitButton.hasInitialDisabled;
+
+        if (!hadDisabledClass) return error;
+
         const requiredFields = form.querySelectorAll('[data-required]');
         let allFilled = true;
 
@@ -754,6 +762,11 @@ function formSubmit() {
     console.log(`[Форма]: ${message}`);
   }
 }
+
+formFieldsInit({
+  viewPass: true,
+  autoHeight: false
+});
 
 formSubmit();
 
@@ -1599,9 +1612,9 @@ if (document.querySelector('.block-intro__slider')) {
     fadeEffect: {
       crossFade: true
     },
-    autoplay: {
-      delay: 3000,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    // },
     navigation: {
       prevEl: '.block-intro-arrow-prev',
       nextEl: '.block-intro-arrow-next',
@@ -1834,6 +1847,7 @@ if (document.querySelector('.block-materials__slider')) {
     lazy: true,
     speed: 400,
     effect: "fade",
+    autoHeight: true,
     fadeEffect: {
       crossFade: true
     },
@@ -1877,6 +1891,61 @@ if (document.querySelector('.block-materials__slider')) {
 
   updateActiveSlide(swiperMaterials.realIndex);
 }
+
+document.querySelectorAll('.block-products').forEach((block) => {
+  const productsSlider = block.querySelector('.block-products__slider');
+  if (!productsSlider) return;
+
+  const prevBtn = block.querySelector('.block-products-arrow-prev');
+  const nextBtn = block.querySelector('.block-products-arrow-next');
+  const paginationEl = block.querySelector('.block-products__pagination');
+
+  new Swiper(productsSlider, {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    speed: 400,
+    navigation: {
+      prevEl: prevBtn,
+      nextEl: nextBtn,
+    },
+    pagination: {
+      el: paginationEl,
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 'auto',
+        spaceBetween: 24,
+      },
+      1500: {
+        slidesPerView: 2,
+        spaceBetween: 24,
+      },
+    },
+  });
+});
+
+document.querySelectorAll('.card-product').forEach((card) => {
+  const innerSlider = card.querySelector('.card-product__slider');
+  if (!innerSlider) return;
+
+  const prevArrow = card.querySelector('.card-product-arrow-prev');
+  const nextArrow = card.querySelector('.card-product-arrow-next');
+
+  new Swiper(innerSlider, {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 800,
+    navigation: {
+      prevEl: prevArrow,
+      nextEl: nextArrow,
+    },
+  });
+});
 
 //========================================================================================================================================================
 
@@ -1971,4 +2040,81 @@ if (iconMenu) {
 // Добавляем класс 'loaded' после полной загрузки страницы
 window.addEventListener('load', function () {
   document.documentElement.classList.add('loaded');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const revealClasses = ['title'];
+  const visibleClass = 'is-visible';
+  const isMobile = window.innerWidth < 768;
+
+  const style = document.createElement('style');
+  style.textContent = revealClasses.map(cls => `
+    .${cls} {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition-delay: 0.12s;
+      will-change: opacity, transform;
+    }
+    .${cls}.${visibleClass} {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  `).join('\n');
+  document.head.appendChild(style);
+
+  const excludedSelectors = ['.no-reveal', '.disable-reveal'];
+
+  function isExcluded(el) {
+    return excludedSelectors.some(sel =>
+      el.matches(sel) || el.closest(sel)
+    );
+  }
+
+  const revealElements = revealClasses.flatMap(cls =>
+    Array.from(document.querySelectorAll(`.${cls}`))
+  );
+
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < window.innerHeight * 0.9 &&
+      rect.bottom > 0
+    );
+  }
+
+  revealElements.forEach(el => {
+    if (isMobile && isExcluded(el)) {
+      revealClasses.forEach(cls => el.classList.remove(cls));
+      el.style.opacity = '';
+      el.style.transform = '';
+      el.style.transition = '';
+      el.style.willChange = '';
+    }
+  });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(visibleClass);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px'
+    });
+
+    revealElements.forEach(el => {
+      if (!(isMobile && isExcluded(el))) {
+        observer.observe(el);
+
+        if (isInViewport(el)) {
+          el.classList.add(visibleClass);
+        }
+      }
+    });
+  } else {
+    console.warn('IntersectionObserver не поддерживается.');
+  }
 });
