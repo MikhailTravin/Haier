@@ -102,11 +102,12 @@
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        background: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.4);
         opacity: 1 !important;
         margin: 0px 0px 0px 0px !important;
+        transition: background-color 0.3s;
     }
     .swiper-pagination-bullet-active {
-        background: #6c39fe;
+        background-color: #6c39fe;
     }
 }

@@ -23,6 +23,7 @@ body::after {
     transition: visibility 0.8s ease 0s;
     visibility: hidden;
     pointer-events: none;
+    z-index: 150;
 }
 .popup_show {
     z-index: 150;
