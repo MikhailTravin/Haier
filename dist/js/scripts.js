@@ -2759,9 +2759,12 @@ if (swiperWrapper) {
   const slides = document.querySelectorAll('.popup-quiz__slide');
   const prevButton = document.querySelector('.btn-quiz-prev');
   const nextButton = document.querySelector('.btn-quiz-next');
-  const currentQuestionSpan = document.querySelector('.popup-quiz-bottom__questions .blue');
-  const totalQuestionsSpan = document.querySelector('.popup-quiz-bottom__questions .grey');
+  const nextButton2 = document.querySelector('.btn-quiz-next2');
+  const currentQuestionSpan = document.querySelector('.popup-quiz-bottom__question .blue');
+  const totalQuestionsSpan = document.querySelector('.popup-quiz-bottom__question .grey');
   const paginationContainer = document.querySelector('.popup-quiz-bottom__pagination');
+  const hintTextElement = document.querySelector('.popup-quiz-bottom__question-text');
+  const nextButtonSpan = nextButton ? nextButton.querySelector('span') : null;
 
   let currentIndex = 0;
   const totalSlides = slides.length;
@@ -2774,13 +2777,64 @@ if (swiperWrapper) {
     if (!paginationContainer) return;
 
     paginationContainer.innerHTML = '';
-    for (let i = 0; i < totalSlides; i++) {
-      const progressDot = document.createElement('div');
-      progressDot.classList.add('pagination-dot');
-      if (i === currentIndex) {
-        progressDot.classList.add('active');
+
+    const progressBar = document.createElement('div');
+    progressBar.classList.add('progress-bar');
+
+    const progressFill = document.createElement('div');
+    progressFill.classList.add('progress-fill');
+
+    progressBar.appendChild(progressFill);
+    paginationContainer.appendChild(progressBar);
+
+    updateProgressFill();
+  }
+
+  function updateProgressFill() {
+    const progressFill = document.querySelector('.progress-fill');
+    if (!progressFill) return;
+
+    const percent = ((currentIndex + 1) / totalSlides) * 100;
+    progressFill.style.width = `${percent}%`;
+  }
+
+  function updateHintText() {
+    if (!hintTextElement) return;
+
+    if (currentIndex === totalSlides - 2) {
+      hintTextElement.textContent = 'Вы почти у цели!';
+    } else if (currentIndex === totalSlides - 1) {
+      hintTextElement.textContent = 'Финальный вопрос! :)';
+    } else {
+      hintTextElement.textContent = '';
+    }
+  }
+
+  function updateButtonVisibility() {
+    if (currentIndex === totalSlides - 1) {
+      if (nextButton) {
+        nextButton.style.display = 'none';
       }
-      paginationContainer.appendChild(progressDot);
+      if (nextButton2) {
+        nextButton2.style.display = 'flex';
+      }
+    } else {
+      if (nextButton) {
+        nextButton.style.display = 'flex';
+      }
+      if (nextButton2) {
+        nextButton2.style.display = 'none';
+      }
+    }
+  }
+
+  function updateButtonText() {
+    if (!nextButtonSpan) return;
+
+    if (currentIndex === totalSlides - 1) {
+      nextButtonSpan.textContent = 'Узнать стоимость';
+    } else {
+      nextButtonSpan.textContent = 'Далее';
     }
   }
 
@@ -2811,28 +2865,16 @@ if (swiperWrapper) {
       }
     }
 
-    updateProgressBar();
-  }
-
-  function updateProgressBar() {
-    if (!paginationContainer) return;
-
-    const dots = paginationContainer.querySelectorAll('.pagination-dot');
-    dots.forEach((dot, index) => {
-      if (index === currentIndex) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
-    });
+    updateHintText();
+    updateButtonText();
+    updateButtonVisibility();
+    updateProgressFill();
   }
 
   function nextSlide() {
     if (currentIndex < totalSlides - 1) {
       currentIndex++;
       updateSlide();
-    } else {
-      completeQuiz();
     }
   }
 
@@ -2844,26 +2886,218 @@ if (swiperWrapper) {
   }
 
   function completeQuiz() {
-    const answers = [];
-    slides.forEach((slide, index) => {
-      const selectedRadio = slide.querySelector('input[type="radio"]:checked');
-      if (selectedRadio) {
-        answers.push({
-          question: index + 1,
-          value: selectedRadio.value
-        });
-      }
-    });
+    // Здесь можно добавить отправку формы или другие действия
   }
 
   if (nextButton) {
     nextButton.addEventListener('click', nextSlide);
   }
 
+  if (nextButton2) {
+    nextButton2.addEventListener('click', completeQuiz);
+  }
+
   if (prevButton) {
     prevButton.addEventListener('click', prevSlide);
   }
 
+  if (nextButton2) {
+    nextButton2.style.display = 'none';
+  }
+
   createProgressBar();
   updateSlide();
+}
+
+//========================================================================================================================================================
+
+// Функция для форматирования даты в формате ДД.ММ.ГГГГ
+function formatDate() {
+  const now = new Date();
+  const day = String(now.getDate()).padStart(2, '0');
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const year = now.getFullYear();
+  return `${day}.${month}.${year}`;
+}
+
+// Функция для форматирования размера файла
+function formatFileSize(bytes) {
+  if (bytes === 0) return '0 Bytes';
+  const k = 1024;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
+
+// Функция для получения суммарного размера всех выбранных файлов
+function getTotalFileSize(files) {
+  let totalSize = 0;
+  for (let i = 0; i < files.length; i++) {
+    totalSize += files[i].size;
+  }
+  return totalSize;
+}
+
+// Функция для получения имен всех выбранных файлов
+function getFileNames(files) {
+  const names = [];
+  for (let i = 0; i < files.length; i++) {
+    names.push(files[i].name);
+  }
+  return names;
+}
+
+// Функция для обновления интерфейса блока form-file
+function updateFileBlock(block, files) {
+  const mainTitle = block.querySelector('.form-file__name'); // основной заголовок блока
+  const picElement = block.querySelector('.form-file__pic1');
+  const titleFilename = block.querySelector('.form-file__title-filename');
+  const subtitle = block.querySelector('.form-file__subtitle');
+  const formFileText1 = block.querySelector('.form-file-text1');
+  const formFileText2 = block.querySelector('.form-file-text2');
+
+  if (!files || files.length === 0) {
+    // Если файлов нет - сбрасываем всё в исходное состояние
+    if (picElement) {
+      picElement.src = 'img/icon/file.svg';
+    }
+    if (titleFilename) {
+      titleFilename.textContent = 'Загрузить проект кухни';
+    }
+    if (subtitle) {
+      // Восстанавливаем исходный текст подзаголовка
+      if (formFileText1 && formFileText2) {
+        formFileText1.textContent = 'Форматы:';
+        formFileText2.textContent = 'JPEG, DOC, PDF';
+      }
+    }
+    // Восстанавливаем исходный заголовок блока
+    if (mainTitle) {
+      const originalText = mainTitle.getAttribute('data-original-title');
+      if (originalText) {
+        mainTitle.innerHTML = originalText;
+      }
+    }
+    block.classList.remove('active');
+    return;
+  }
+
+  // Получаем данные о файлах
+  const fileNames = getFileNames(files);
+  const totalSize = getTotalFileSize(files);
+  const formattedSize = formatFileSize(totalSize);
+  const currentDate = formatDate();
+
+  // Меняем картинку на data-image картинку
+  const dataImage = picElement.getAttribute('data-image');
+  if (dataImage && picElement) {
+    picElement.src = dataImage;
+  }
+
+  // Сохраняем оригинальный текст заголовка, если ещё не сохранён
+  if (mainTitle && !mainTitle.getAttribute('data-original-title')) {
+    mainTitle.setAttribute('data-original-title', mainTitle.innerHTML);
+  }
+
+  // Обновляем заголовок блока (form-file__title) с названием файла/элемента
+  let displayTitleText = '';
+  if (fileNames.length === 1) {
+    displayTitleText = fileNames[0];
+  } else {
+    displayTitleText = fileNames[0] + ` + еще ${fileNames.length - 1}`;
+  }
+  if (mainTitle) {
+    mainTitle.innerHTML = displayTitleText + ' <span>(необязательно)</span>';
+  }
+
+  // Обновляем внутренний заголовок с именами файлов (для деталей)
+  let displayText = '';
+  if (fileNames.length === 1) {
+    displayText = fileNames[0];
+  } else {
+    displayText = fileNames[0] + ` +${fileNames.length - 1}`;
+  }
+  if (titleFilename) {
+    titleFilename.textContent = displayText;
+  }
+
+  // Обновляем подзаголовок: дата и размер файла
+  if (subtitle) {
+    // Очищаем подзаголовок и добавляем новые элементы
+    subtitle.innerHTML = '';
+
+    const dateSpan = document.createElement('span');
+    dateSpan.className = 'form-file-text1';
+    dateSpan.textContent = currentDate;
+
+    const sizeSpan = document.createElement('span');
+    sizeSpan.className = 'form-file-text2';
+    sizeSpan.textContent = formattedSize;
+
+    subtitle.appendChild(dateSpan);
+    subtitle.appendChild(sizeSpan);
+  }
+
+  // Добавляем класс active
+  block.classList.add('active');
+}
+
+// Функция для очистки блока form-file
+function clearFileBlock(block) {
+  const fileInput = block.querySelector('input[type="file"]');
+  if (fileInput) {
+    fileInput.value = ''; // Очищаем выбранные файлы
+  }
+  updateFileBlock(block, null); // Сбрасываем интерфейс
+}
+
+// Функция для обработки выбора файлов
+function handleFileSelect(block, inputElement) {
+  const files = inputElement.files;
+
+  if (files && files.length > 0) {
+    updateFileBlock(block, files);
+  } else {
+    clearFileBlock(block);
+  }
+}
+
+// Инициализация всех блоков .form-file на странице
+function initializeFileBlocks() {
+  const fileBlocks = document.querySelectorAll('.form-file');
+
+  fileBlocks.forEach(block => {
+    const fileInput = block.querySelector('input[type="file"]');
+    const deleteButton = block.querySelector('.form-file__delete');
+
+    if (fileInput) {
+      // Обработчик изменения выбора файлов
+      fileInput.addEventListener('change', function (event) {
+        handleFileSelect(block, this);
+        event.stopPropagation();
+      });
+    }
+
+    if (deleteButton) {
+      // Обработчик клика по кнопке удаления
+      deleteButton.addEventListener('click', function (event) {
+        event.stopPropagation(); // Останавливаем всплытие, чтобы не сработал клик на кнопке
+        clearFileBlock(block);
+      });
+    }
+
+    // Чтобы клик по кнопке удаления не активировал выбор файла
+    if (deleteButton && fileInput) {
+      deleteButton.addEventListener('mousedown', function (event) {
+        event.preventDefault(); // Предотвращаем фокус на input
+      });
+    }
+  });
+}
+
+// Запускаем инициализацию после загрузки DOM
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeFileBlocks);
+} else {
+  initializeFileBlocks();
 }
