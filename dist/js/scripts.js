@@ -2911,7 +2911,6 @@ if (swiperWrapper) {
 
 //========================================================================================================================================================
 
-// Функция для форматирования даты в формате ДД.ММ.ГГГГ
 function formatDate() {
   const now = new Date();
   const day = String(now.getDate()).padStart(2, '0');
@@ -2920,7 +2919,6 @@ function formatDate() {
   return `${day}.${month}.${year}`;
 }
 
-// Функция для форматирования размера файла
 function formatFileSize(bytes) {
   if (bytes === 0) return '0 Bytes';
   const k = 1024;
@@ -2929,7 +2927,6 @@ function formatFileSize(bytes) {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 
-// Функция для получения суммарного размера всех выбранных файлов
 function getTotalFileSize(files) {
   let totalSize = 0;
   for (let i = 0; i < files.length; i++) {
@@ -2938,7 +2935,6 @@ function getTotalFileSize(files) {
   return totalSize;
 }
 
-// Функция для получения имен всех выбранных файлов
 function getFileNames(files) {
   const names = [];
   for (let i = 0; i < files.length; i++) {
@@ -2947,9 +2943,8 @@ function getFileNames(files) {
   return names;
 }
 
-// Функция для обновления интерфейса блока form-file
 function updateFileBlock(block, files) {
-  const mainTitle = block.querySelector('.form-file__name'); // основной заголовок блока
+  const mainTitle = block.querySelector('.form-file__name');
   const picElement = block.querySelector('.form-file__pic1');
   const titleFilename = block.querySelector('.form-file__title-filename');
   const subtitle = block.querySelector('.form-file__subtitle');
@@ -2957,7 +2952,6 @@ function updateFileBlock(block, files) {
   const formFileText2 = block.querySelector('.form-file-text2');
 
   if (!files || files.length === 0) {
-    // Если файлов нет - сбрасываем всё в исходное состояние
     if (picElement) {
       picElement.src = 'img/icon/file.svg';
     }
@@ -2965,13 +2959,11 @@ function updateFileBlock(block, files) {
       titleFilename.textContent = 'Загрузить проект кухни';
     }
     if (subtitle) {
-      // Восстанавливаем исходный текст подзаголовка
       if (formFileText1 && formFileText2) {
         formFileText1.textContent = 'Форматы:';
         formFileText2.textContent = 'JPEG, DOC, PDF';
       }
     }
-    // Восстанавливаем исходный заголовок блока
     if (mainTitle) {
       const originalText = mainTitle.getAttribute('data-original-title');
       if (originalText) {
@@ -2982,24 +2974,20 @@ function updateFileBlock(block, files) {
     return;
   }
 
-  // Получаем данные о файлах
   const fileNames = getFileNames(files);
   const totalSize = getTotalFileSize(files);
   const formattedSize = formatFileSize(totalSize);
   const currentDate = formatDate();
 
-  // Меняем картинку на data-image картинку
   const dataImage = picElement.getAttribute('data-image');
   if (dataImage && picElement) {
     picElement.src = dataImage;
   }
 
-  // Сохраняем оригинальный текст заголовка, если ещё не сохранён
   if (mainTitle && !mainTitle.getAttribute('data-original-title')) {
     mainTitle.setAttribute('data-original-title', mainTitle.innerHTML);
   }
 
-  // Обновляем заголовок блока (form-file__title) с названием файла/элемента
   let displayTitleText = '';
   if (fileNames.length === 1) {
     displayTitleText = fileNames[0];
@@ -3010,7 +2998,6 @@ function updateFileBlock(block, files) {
     mainTitle.innerHTML = displayTitleText + ' <span>(необязательно)</span>';
   }
 
-  // Обновляем внутренний заголовок с именами файлов (для деталей)
   let displayText = '';
   if (fileNames.length === 1) {
     displayText = fileNames[0];
@@ -3021,9 +3008,7 @@ function updateFileBlock(block, files) {
     titleFilename.textContent = displayText;
   }
 
-  // Обновляем подзаголовок: дата и размер файла
   if (subtitle) {
-    // Очищаем подзаголовок и добавляем новые элементы
     subtitle.innerHTML = '';
 
     const dateSpan = document.createElement('span');
@@ -3038,20 +3023,17 @@ function updateFileBlock(block, files) {
     subtitle.appendChild(sizeSpan);
   }
 
-  // Добавляем класс active
   block.classList.add('active');
 }
 
-// Функция для очистки блока form-file
 function clearFileBlock(block) {
   const fileInput = block.querySelector('input[type="file"]');
   if (fileInput) {
-    fileInput.value = ''; // Очищаем выбранные файлы
+    fileInput.value = '';
   }
-  updateFileBlock(block, null); // Сбрасываем интерфейс
+  updateFileBlock(block, null);
 }
 
-// Функция для обработки выбора файлов
 function handleFileSelect(block, inputElement) {
   const files = inputElement.files;
 
@@ -3062,7 +3044,6 @@ function handleFileSelect(block, inputElement) {
   }
 }
 
-// Инициализация всех блоков .form-file на странице
 function initializeFileBlocks() {
   const fileBlocks = document.querySelectorAll('.form-file');
 
@@ -3071,7 +3052,6 @@ function initializeFileBlocks() {
     const deleteButton = block.querySelector('.form-file__delete');
 
     if (fileInput) {
-      // Обработчик изменения выбора файлов
       fileInput.addEventListener('change', function (event) {
         handleFileSelect(block, this);
         event.stopPropagation();
@@ -3079,23 +3059,20 @@ function initializeFileBlocks() {
     }
 
     if (deleteButton) {
-      // Обработчик клика по кнопке удаления
       deleteButton.addEventListener('click', function (event) {
-        event.stopPropagation(); // Останавливаем всплытие, чтобы не сработал клик на кнопке
+        event.stopPropagation();
         clearFileBlock(block);
       });
     }
 
-    // Чтобы клик по кнопке удаления не активировал выбор файла
     if (deleteButton && fileInput) {
       deleteButton.addEventListener('mousedown', function (event) {
-        event.preventDefault(); // Предотвращаем фокус на input
+        event.preventDefault();
       });
     }
   });
 }
 
-// Запускаем инициализацию после загрузки DOM
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initializeFileBlocks);
 } else {
