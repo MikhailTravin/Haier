@@ -2671,38 +2671,32 @@ function initMobileFilter() {
     const resetButtons = document.querySelectorAll('.catalog-filter-spollers__reset');
     const applyButtons = document.querySelectorAll('.catalog-filter-spollers__buttons-mob .btn-violet');
 
-    // Функция для открытия фильтра
     function openFilter() {
       document.documentElement.classList.add('filter-open');
     }
 
-    // Функция для закрытия фильтра
     function closeFilter() {
       document.documentElement.classList.remove('filter-open');
     }
 
-    // Функция для сброса всех чекбоксов
     function resetAllCheckboxes() {
       const allCheckboxes = document.querySelectorAll('.catalog-filter-spollers__item .checkbox__input');
       allCheckboxes.forEach(checkbox => {
         checkbox.checked = false;
       });
 
-      // Обновляем счетчики, если они есть
       const numberSpans = document.querySelectorAll('.catalog-filter-spollers__number');
       numberSpans.forEach(span => {
         span.textContent = '';
         span.classList.remove('active');
       });
 
-      // Деактивируем кнопки сброса
       const deleteBtns = document.querySelectorAll('.btn-delete');
       deleteBtns.forEach(btn => {
         btn.classList.add('disabled');
       });
     }
 
-    // Обработчик клика по кнопкам спойлера (открытие фильтра)
     spollerButtons.forEach(button => {
       button.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -2710,7 +2704,6 @@ function initMobileFilter() {
       });
     });
 
-    // Обработчик клика по кнопкам закрытия
     closeButtons.forEach(closeBtn => {
       closeBtn.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -2718,7 +2711,6 @@ function initMobileFilter() {
       });
     });
 
-    // Обработчик клика по кнопке сброса
     resetButtons.forEach(resetBtn => {
       resetBtn.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -2726,7 +2718,6 @@ function initMobileFilter() {
       });
     });
 
-    // Обработчик клика по кнопке "Применить" в мобильной версии
     applyButtons.forEach(applyBtn => {
       applyBtn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -2734,17 +2725,14 @@ function initMobileFilter() {
       });
     });
 
-    // Закрытие фильтра при клике на пустое место (вне блока)
     document.addEventListener('click', function (e) {
       if (document.documentElement.classList.contains('filter-open')) {
-        // Проверяем, был ли клик вне блока фильтра
         if (filterBody && !filterBody.contains(e.target)) {
           closeFilter();
         }
       }
     });
 
-    // Предотвращаем закрытие при клике внутри блока фильтра
     if (filterBody) {
       filterBody.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -2752,129 +2740,16 @@ function initMobileFilter() {
     }
   }
 }
-
-// Инициализация при загрузке страницы
 initMobileFilter();
 
-// Следим за изменением размера окна
 window.addEventListener('resize', function () {
-  // Если ширина становится больше 992px, убираем класс filter-open
   if (window.innerWidth > 992) {
     document.documentElement.classList.remove('filter-open');
   } else {
     initMobileFilter();
   }
 });
-/*
-//========================================================================================================================================================
 
-const filterBody = document.querySelector('.block-catalog-filter__body');
-
-if (filterBody) {
-  const filterButtons = document.querySelectorAll('.catalog-filter-spollers__button');
-  const closeButtons = document.querySelectorAll('.catalog-filter-spollers__close');
-  const resetButton = document.querySelector('.catalog-filter-spollers__reset');
-  const applyButton = document.querySelector('.catalog-filter-spollers__buttons-mob .btn-violet');
-  // Функция для открытия фильтра
-  function openFilter() {
-    document.documentElement.classList.add('filter-open');
-  }
-
-  // Функция для закрытия фильтра
-  function closeFilter() {
-    document.documentElement.classList.remove('filter-open');
-  }
-
-  // Функция для сброса всех чекбоксов
-  function resetAllCheckboxes() {
-    const allCheckboxes = document.querySelectorAll('.catalog-filter-spollers .checkbox__input');
-    allCheckboxes.forEach(checkbox => {
-      checkbox.checked = false;
-    });
-  }
-
-  // Проверяем, что мы на мобильном разрешении (max-width: 992px)
-  function isMobile() {
-    return window.innerWidth <= 992;
-  }
-
-  // Обработчик клика по кнопкам фильтра (открытие)
-  if (filterButtons.length > 0) {
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function (e) {
-        e.stopPropagation();
-        if (isMobile()) {
-          openFilter();
-        }
-      });
-    });
-  }
-
-  // Обработчик клика по кнопкам закрытия
-  if (closeButtons.length > 0) {
-    closeButtons.forEach(closeBtn => {
-      closeBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        if (isMobile()) {
-          closeFilter();
-        }
-      });
-    });
-  }
-
-  // Обработчик клика по кнопке "Сбросить" в мобильной версии
-  if (resetButton) {
-    resetButton.addEventListener('click', function (e) {
-      e.stopPropagation();
-      if (isMobile()) {
-        resetAllCheckboxes();
-        // Опционально: добавить визуальную обратную связь
-        console.log('Все чекбоксы сброшены');
-      }
-    });
-  }
-
-  // Обработчик клика по кнопке "Применить" в мобильной версии
-  if (applyButton) {
-    applyButton.addEventListener('click', function (e) {
-      e.stopPropagation();
-      if (isMobile()) {
-        closeFilter();
-        // Здесь можно добавить логику применения фильтров
-        console.log('Фильтры применены');
-      }
-    });
-  }
-
-  // Закрытие при клике на пустое место (оверлей)
-  document.addEventListener('click', function (e) {
-    if (isMobile() && document.documentElement.classList.contains('filter-open')) {
-      // Проверяем, что клик был не по фильтру и не по кнопке открытия
-      const isClickOnFilter = filterBody && filterBody.contains(e.target);
-      const isClickOnFilterButton = Array.from(filterButtons).some(btn => btn.contains(e.target));
-
-      if (!isClickOnFilter && !isClickOnFilterButton) {
-        closeFilter();
-      }
-    }
-  });
-
-  // Предотвращаем закрытие при клике внутри фильтра
-  if (filterBody) {
-    filterBody.addEventListener('click', function (e) {
-      e.stopPropagation();
-    });
-  }
-
-  // Обновляем состояние при изменении размера окна
-  window.addEventListener('resize', function () {
-    // Если ширина стала больше 992px и фильтр был открыт - закрываем его
-    if (!isMobile() && document.documentElement.classList.contains('filter-open')) {
-      closeFilter();
-    }
-  });
-}
-*/
 
 //========================================================================================================================================================
 
