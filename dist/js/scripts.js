@@ -3078,3 +3078,26 @@ if (document.readyState === 'loading') {
 } else {
   initializeFileBlocks();
 }
+
+//========================================================================================================================================================
+
+const quizIcons = document.querySelectorAll('.popup-quiz-bottom__icon');
+if (quizIcons) {
+  const closeButton = document.querySelector('.quiz-icons-descr__close');
+
+  function addQuizDescrOpen() {
+    document.documentElement.classList.add('quiz-descr-open');
+  }
+
+  function removeQuizDescrOpen() {
+    document.documentElement.classList.remove('quiz-descr-open');
+  }
+
+  quizIcons.forEach(icon => {
+    icon.addEventListener('click', addQuizDescrOpen);
+  });
+
+  if (closeButton) {
+    closeButton.addEventListener('click', removeQuizDescrOpen);
+  }
+}
