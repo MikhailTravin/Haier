@@ -2059,22 +2059,50 @@ if (searchButton && searchInput) {
 //========================================================================================================================================================
 
 //Меню
-const iconMenu = document.querySelector('.icon-menu');
-const headerTop = document.querySelector('.header__body');
-if (iconMenu) {
-  iconMenu.addEventListener("click", function (e) {
-    e.stopPropagation();
-    document.documentElement.classList.toggle("menu-open");
-  });
-  document.addEventListener('click', function (e) {
-    const isClickInsideHeaderTop = headerTop && headerTop.contains(e.target);
-    const isClickOnMenuIcon = e.target === iconMenu || iconMenu.contains(e.target);
+const iconMenu = document.querySelector('.header-bottom__burger');
+const btnBuyer = document.querySelector('.btn-buyer');
+const btnProject = document.querySelector('.btn-project');
+const headerTop = document.querySelectorAll('.header-dropdown__body');
 
-    if (!isClickInsideHeaderTop && !isClickOnMenuIcon) {
-      document.documentElement.classList.remove("menu-open");
+const isMobile = () => window.innerWidth <= 1200;
+const isInsideHeader = (target) => headerTop && Array.from(headerTop).some(el => el.contains(target));
+
+const close = (className) => document.documentElement.classList.remove(className);
+const closeAll = () => ['menu-open', 'buyer-open', 'project-open'].forEach(close);
+const closeExcept = (keepClass) => {
+  ['menu-open', 'buyer-open', 'project-open'].forEach(c => c !== keepClass && close(c));
+};
+
+// Ресайз
+window.addEventListener('resize', () => isMobile() && close('buyer-open'));
+if (isMobile()) close('buyer-open');
+
+// Общая функция для кнопок
+function setupToggle(btn, openClass) {
+  if (!btn) return;
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (openClass === 'buyer-open' && isMobile()) return;
+
+    if (!document.documentElement.classList.contains(openClass)) {
+      closeExcept(openClass);
+      document.documentElement.classList.add(openClass);
+    } else {
+      close(openClass);
     }
   });
+
+  document.addEventListener('click', (e) => {
+    const isInside = isInsideHeader(e.target);
+    const isClickOnBtn = e.target === btn || btn.contains(e.target);
+    if (!isInside && !isClickOnBtn) close(openClass);
+  });
 }
+
+setupToggle(iconMenu, 'menu-open');
+setupToggle(btnBuyer, 'buyer-open');
+setupToggle(btnProject, 'project-open');
 
 //========================================================================================================================================================
 
