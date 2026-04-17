@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Контакты - детальная</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header-white.njk' %}
+        <main class="main main-other">
+
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Главная
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Адреса студий
+                            </a>
+                        </li>
+                        <li><span>ТРЦ «Бутово Молл»</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block-showrooms main-showrooms block2 contacts-detail">
+                <div class="container">
+                    <div class="heading-complex2">
+                        <div class="back">
+                            <img loading="lazy" src="img/icon/arrow2.svg" alt="">
+                            <span>Назад</span>
+                        </div>
+                        <div class="heading-complex2__right">
+                            <h2 class="title2 mini">ТРЦ «Бутово Молл»</h2>
+                            <a href="./" data-popup="#leave-request" class="btn btn-black">
+                                <span>Записаться в салон</span>
+                                <img loading="lazy" src="img/icon/arrow2.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="block-showrooms__content">
+                        <div class="block-showrooms-nav">
+                            <div data-filter="list" class="block-showrooms-nav__title">
+                                <img loading="lazy" src="img/icon/list.svg" alt="">
+                            </div>
+                            <div data-filter="map" class="block-showrooms-nav__title active">
+                                <img loading="lazy" src="img/icon/map3.svg" alt="">
+                            </div>
+                        </div>
+                        <div data-simplebar data-filter="list" class="block-showrooms__left">
+                            <div class="select-salon">
+                                <div class="select-salon__simplebar">
+                                    <div class="contacts-detail__title">Адрес салона:</div>
+                                    <div class="salon-options">
+                                        <div class="salon-options__item">
+                                            <span class="salon-options__label">
+                                                <span class="salon-options__bottom">
+                                                    <span class="salon-options__left">
+                                                        <span class="salon-options__column">
+                                                            <img loading="lazy" src="img/icon/metro2.svg" alt="">
+                                                            <span class="salon-options__text grey">
+                                                                Бунинская Аллея
+                                                            </span>
+                                                        </span>
+                                                        <span class="salon-options__column">
+                                                            <img loading="lazy" src="img/icon/clock.svg" alt="">
+                                                            <span class="salon-options__text text">
+                                                                Пн — Вс 10.00 — 22.00
+                                                            </span>
+                                                        </span>
+                                                        <span class="salon-options__column column2">
+                                                            <img loading="lazy" src="img/icon/map2.svg" alt="">
+                                                            <span class="salon-options__text text">
+                                                                Московская область, поселение
+                                                                Воскресенское, Чечёрский проезд, 51
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                    <a href="./" class="salon-options__map">
+                                                        <img loading="lazy" src="img/icon/map4.svg" alt="">
+                                                        <span>Построить маршрут</span>
+                                                    </a>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-detail__title">Контакты:</div>
+                                    <div class="salon-options">
+                                        <div class="salon-options__item">
+                                            <span class="salon-options__label">
+                                                <span class="salon-options__bottom">
+                                                    <span class="salon-options__left">
+                                                        <span class="salon-options__column">
+                                                            <img loading="lazy" src="img/icon/phone2.svg" alt="">
+                                                            <a href="tel:79100056434" class="salon-options__text text">
+                                                                +7 (910) 005-64-34
+                                                            </a>
+                                                        </span>
+                                                        <span class="salon-options__column">
+                                                            <img loading="lazy" src="img/icon/mail.svg" alt="">
+                                                            <a href="mailto:ButovoMall@haieronline.ru"
+                                                                class="salon-options__text text email">
+                                                                ButovoMall@haieronline.ru
+                                                            </a>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-detail__title">Как добраться?</div>
+                                    <div class="contacts-detail__subtitle">Остановки рядом:</div>
+                                    <div class="contacts-detail__body">
+                                        <div class="contacts-detail__column">
+                                            <div class="contacts-detail__top">
+                                                <img src="img/icon/halt.svg" alt="">
+                                            </div>
+                                            <p>
+                                                «ТРЦ Бутово-Молл»
+                                            </p>
+                                        </div>
+                                        <div class="contacts-detail__column">
+                                            <div class="contacts-detail__top">
+                                                <img src="img/icon/halt.svg" alt="">
+                                            </div>
+                                            <p>
+                                                «Чечёрский проезд, 126»
+                                            </p>
+                                        </div>
+                                        <div class="contacts-detail__column">
+                                            <div class="contacts-detail__top">
+                                                <img src="img/icon/halt.svg" alt="">
+                                            </div>
+                                            <p>
+                                                «Новое Бутово»
+                                            </p>
+                                        </div>
+                                        <div class="contacts-detail__column">
+                                            <div class="contacts-detail__top">
+                                                <img src="img/icon/halt.svg" alt="">
+                                            </div>
+                                            <p>
+                                                «Остафьевская улица»
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-detail__subtitle">На метро:</div>
+                                    <div class="salon-options">
+                                        <div class="salon-options__item">
+                                            <span class="salon-options__label contacts-detail-metro">
+                                                <span class="salon-options__bottom">
+                                                    <span class="salon-options__left">
+                                                        <span class="salon-options__column">
+                                                            <img loading="lazy" src="img/icon/metro2.svg" alt="">
+                                                            <span class="salon-options__text text">
+                                                                Метро ст. «Бунинская Аллея», первый вагон из центра.
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-detail__subtitle">Наземным общественным транспортом:</div>
+                                    <div class="contacts-detail__body">
+                                        <div class="contacts-detail__column">
+                                            <div class="contacts-detail__top">
+                                                <img src="img/icon/halt.svg" alt="">
+                                                <p>
+                                                    «ТРЦ Бутово-Молл»
+                                                </p>
+                                            </div>
+                                            <span>
+                                                №: 288, 802, 967, 1255к.
+                                            </span>
+                                        </div>
+                                        <div class="contacts-detail__column">
+                                            <div class="contacts-detail__top">
+                                                <img src="img/icon/halt.svg" alt="">
+                                                <p>
+                                                    «Чечёрский проезд, 126»
+                                                </p>
+                                            </div>
+                                            <span>
+                                                №: с949, 288, 802.
+                                            </span>
+                                        </div>
+                                        <div class="contacts-detail__column">
+                                            <div class="contacts-detail__top">
+                                                <img src="img/icon/halt.svg" alt="">
+                                                <p>
+                                                    «Остафьевская улица»
+                                                </p>
+                                            </div>
+                                            <span>
+                                                №: 94, 802, 288, 165, 213, 293,691, 877, С1, Н8, С53.
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-detail__subtitle">Наземным общественным транспортом:</div>
+                                    <div class="contacts-detail__logo">
+                                        <img src="img/icon/logo3.svg" alt="">
+                                        <span>
+                                            Фирменный магазин Haier. 2 этаж, рядом с магазином Технопарк
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-filter="map" class="block-showrooms__right active">
+                            <div id="map" class="block-showrooms__map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    <div id="select-salon" aria-hidden="true" class="popup popup-select-salon">
+        <div class="popup__wrapper">
+            <div class="popup__content">
+                <div class="select-salon">
+                    <div class="select-salon__top">
+                        <div data-popup="#leave-request" class="select-salon__back">
+                            <img loading="lazy" src="img/icon/arrow2.svg" alt="">
+                        </div>
+                        <div class="select-salon__title">
+                            Выберите салон
+                        </div>
+                        <div data-close class="select-salon__close">
+                            <img loading="lazy" src="img/icon/close.svg" alt="">
+                        </div>
+                    </div>
+                    <div data-simplebar class="select-salon__simplebar">
+                        <div class="salon-options">
+                            <label class="salon-options__item">
+                                <input hidden class="salon-options__input" type="radio" value="1" name="option">
+                                <span class="salon-options__label">
+                                    <span class="salon-options__top">
+                                        <span class="salon-options__title">
+                                            Кухонная студия Haier Kitchen Lab «Roomer»
+                                        </span>
+                                        <span class="salon-options__icon">
+                                            <img loading="lazy" src="img/icon/check1.svg" alt="">
+                                        </span>
+                                    </span>
+                                    <span class="salon-options__bottom">
+                                        <span class="salon-options__left">
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/metro.svg" alt="">
+                                                <span class="salon-options__text grey">
+                                                    Автозаводская
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/clock.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Пн — Вс 10.00 — 22.00
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column column2">
+                                                <img loading="lazy" src="img/icon/map2.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Московская область, поселение
+                                                    Воскресенское, Чечёрский проезд, 51
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <a href="./" class="salon-options__map">
+                                            <img loading="lazy" src="img/icon/map1.svg" alt="">
+                                        </a>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="salon-options__item">
+                                <input hidden class="salon-options__input" type="radio" value="1" name="option">
+                                <span class="salon-options__label">
+                                    <span class="salon-options__top">
+                                        <span class="salon-options__title">
+                                            Кухонная студия Haier Kitchen Lab «Roomer»
+                                        </span>
+                                        <span class="salon-options__icon">
+                                            <img loading="lazy" src="img/icon/check1.svg" alt="">
+                                        </span>
+                                    </span>
+                                    <span class="salon-options__bottom">
+                                        <span class="salon-options__left">
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/metro.svg" alt="">
+                                                <span class="salon-options__text grey">
+                                                    Автозаводская
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/clock.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Пн — Вс 10.00 — 22.00
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column column2">
+                                                <img loading="lazy" src="img/icon/map2.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Московская область, поселение
+                                                    Воскресенское, Чечёрский проезд, 51
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <a href="./" class="salon-options__map">
+                                            <img loading="lazy" src="img/icon/map1.svg" alt="">
+                                        </a>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="salon-options__item">
+                                <input hidden class="salon-options__input" type="radio" value="1" name="option">
+                                <span class="salon-options__label">
+                                    <span class="salon-options__top">
+                                        <span class="salon-options__title">
+                                            Кухонная студия Haier Kitchen Lab «Roomer»
+                                        </span>
+                                        <span class="salon-options__icon">
+                                            <img loading="lazy" src="img/icon/check1.svg" alt="">
+                                        </span>
+                                    </span>
+                                    <span class="salon-options__bottom">
+                                        <span class="salon-options__left">
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/metro.svg" alt="">
+                                                <span class="salon-options__text grey">
+                                                    Автозаводская
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/clock.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Пн — Вс 10.00 — 22.00
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column column2">
+                                                <img loading="lazy" src="img/icon/map2.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Московская область, поселение
+                                                    Воскресенское, Чечёрский проезд, 51
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <a href="./" class="salon-options__map">
+                                            <img loading="lazy" src="img/icon/map1.svg" alt="">
+                                        </a>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="salon-options__item">
+                                <input hidden class="salon-options__input" type="radio" value="1" name="option">
+                                <span class="salon-options__label">
+                                    <span class="salon-options__top">
+                                        <span class="salon-options__title">
+                                            Кухонная студия Haier Kitchen Lab «Roomer»
+                                        </span>
+                                        <span class="salon-options__icon">
+                                            <img loading="lazy" src="img/icon/check1.svg" alt="">
+                                        </span>
+                                    </span>
+                                    <span class="salon-options__bottom">
+                                        <span class="salon-options__left">
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/metro.svg" alt="">
+                                                <span class="salon-options__text grey">
+                                                    Автозаводская
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/clock.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Пн — Вс 10.00 — 22.00
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column column2">
+                                                <img loading="lazy" src="img/icon/map2.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Московская область, поселение
+                                                    Воскресенское, Чечёрский проезд, 51
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <a href="./" class="salon-options__map">
+                                            <img loading="lazy" src="img/icon/map1.svg" alt="">
+                                        </a>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="salon-options__item">
+                                <input hidden class="salon-options__input" type="radio" value="1" name="option">
+                                <span class="salon-options__label">
+                                    <span class="salon-options__top">
+                                        <span class="salon-options__title">
+                                            Кухонная студия Haier Kitchen Lab «Roomer»
+                                        </span>
+                                        <span class="salon-options__icon">
+                                            <img loading="lazy" src="img/icon/check1.svg" alt="">
+                                        </span>
+                                    </span>
+                                    <span class="salon-options__bottom">
+                                        <span class="salon-options__left">
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/metro.svg" alt="">
+                                                <span class="salon-options__text grey">
+                                                    Автозаводская
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/clock.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Пн — Вс 10.00 — 22.00
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column column2">
+                                                <img loading="lazy" src="img/icon/map2.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Московская область, поселение
+                                                    Воскресенское, Чечёрский проезд, 51
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <a href="./" class="salon-options__map">
+                                            <img loading="lazy" src="img/icon/map1.svg" alt="">
+                                        </a>
+                                    </span>
+                                </span>
+                            </label>
+                            <label class="salon-options__item">
+                                <input hidden class="salon-options__input" type="radio" value="1" name="option">
+                                <span class="salon-options__label">
+                                    <span class="salon-options__top">
+                                        <span class="salon-options__title">
+                                            Кухонная студия Haier Kitchen Lab «Roomer»
+                                        </span>
+                                        <span class="salon-options__icon">
+                                            <img loading="lazy" src="img/icon/check1.svg" alt="">
+                                        </span>
+                                    </span>
+                                    <span class="salon-options__bottom">
+                                        <span class="salon-options__left">
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/metro.svg" alt="">
+                                                <span class="salon-options__text grey">
+                                                    Автозаводская
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column">
+                                                <img loading="lazy" src="img/icon/clock.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Пн — Вс 10.00 — 22.00
+                                                </span>
+                                            </span>
+                                            <span class="salon-options__column column2">
+                                                <img loading="lazy" src="img/icon/map2.svg" alt="">
+                                                <span class="salon-options__text text">
+                                                    Московская область, поселение
+                                                    Воскресенское, Чечёрский проезд, 51
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <a href="./" class="salon-options__map">
+                                            <img loading="lazy" src="img/icon/map1.svg" alt="">
+                                        </a>
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'blocks/popups.njk' %}
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>

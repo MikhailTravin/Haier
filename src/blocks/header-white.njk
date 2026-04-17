@@ -1,6 +1,6 @@
 <header class="header header-white">
     <div class="container">
-        <div data-da=".header__body, 1200" class="header-top">
+        <div class="header-top">
             <ul>
                 <li>
                     <a href="./">Шоурумы</a>
@@ -9,7 +9,7 @@
                     <a href="./">Дизайнеру</a>
                 </li>
                 <li>
-                    <a href="./">Покупателю</a>
+                    <span class="btn-buyer">Покупателю</span>
                 </li>
                 <li>
                     <a href="./">О нас</a>
@@ -32,14 +32,14 @@
                 <a href="./" class="header-bottom__logo">
                     <img src="img/logo.svg" alt="" class="logo1">
                 </a>
-                <ul data-da=".header__body, 1200, first" class="header-bottom__menu">
+                <ul class="header-bottom__menu">
                     <li>
                         <a href="./" class="header-bottom__catalog">
                             Каталог +
                         </a>
                     </li>
                     <li>
-                        <a href="./">Проекты</a>
+                        <span class="btn-project">Проекты</span>
                     </li>
                     <li>
                         <a href="./">Акции</a>
@@ -54,7 +54,7 @@
             </div>
             <div class="header-bottom__right">
                 <div class="header-bottom__icons">
-                    <div data-da=".header__body, 768, first" class="header-bottom__icon search-button">
+                    <div data-da=".header-dropdown, 768, first" class="header-bottom__icon search-button">
                         <div class="search-input">
                             <input autocomplete="off" type="text" name="form[]" placeholder="Поиск по сайту" class="">
                         </div>
@@ -70,40 +70,213 @@
                         <img src="img/icon/user.svg" alt="">
                     </a>
                 </div>
-                <a href="./" data-popup="#free-measurement" data-da=".header__body, 768" class="btn">Обсудить
+                <a href="./" data-popup="#free-measurement" data-da=".header-top__contacts, 768" class="btn">Обсудить
                     проект</a>
                 <a href="./" class="header-bottom__phone">
                     <img src="img/icon/phone.svg" alt="">
                 </a>
-                <div class="icon-menu">
-                    <span></span>
+                <div class="header-bottom__burger">
+                    <div class="icon-menu">
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="header__body">
-            <!--
-            <div class="header__menu">
-                <ul>
-                    <li>
-                        <a href="./">Шоурумы</a>
-                    </li>
-                    <li>
-                        <a href="./">Сотрудничество</a>
-                    </li>
-                    <li>
-                        <a href="./">Дизайнеру</a>
-                    </li>
-                    <li>
-                        <a href="./">Покупателю</a>
-                    </li>
-                    <li>
-                        <a href="./">О нас</a>
-                    </li>
-                    <li>
-                        <a href="./">Статьи</a>
-                    </li>
-                </ul>
-            </div>-->
+        <div class="header-dropdown header-dropdown-main">
+            <div class="header-dropdown__body">
+                <div class="header-dropdown-menu">
+                    <div class="header-dropdown-menu__column">
+                        <div class="header-dropdown-menu__title">Мебель</div>
+                        <ul>
+                            <li>
+                                <a href="./">Кухни</a>
+                            </li>
+                            <li>
+                                <a href="./">Шкафы купе</a>
+                            </li>
+                            <li>
+                                <a href="./">Детские</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header-dropdown-menu__column">
+                        <div class="header-dropdown-menu__title">Клиентам</div>
+                        <ul>
+                            <li>
+                                <a href="./">О нас</a>
+                            </li>
+                            <li>
+                                <a href="./">Контакты</a>
+                            </li>
+                            <li>
+                                <a href="./">Портфолио</a>
+                            </li>
+                            <li>
+                                <a href="./">Визуализация и реализация</a>
+                            </li>
+                            <li>
+                                <a href="./">О производстве</a>
+                            </li>
+                            <li>
+                                <a href="./">Дизайнерам</a>
+                            </li>
+                            <li>
+                                <a href="./">Частые вопросы</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="./" class="header-dropdown-banner">
+                    <img src="img/image14.webp" alt="" class="header-dropdown-banner__bg">
+                    <div class="header-dropdown-banner__top">
+                        <div class="header-dropdown-banner__title">
+                            Все проекты
+                        </div>
+                        <div class="header-dropdown-banner__arrow">
+                            <img loading="lazy" src="img/icon/arrow3.svg" alt="">
+                        </div>
+                    </div>
+                    <p>
+                        Оцените результаты<br>
+                        наших работ
+                    </p>
+                </a>
+                <div class="header-dropdown-contacts">
+                    <div class="header-dropdown-contacts__top">
+                        <div class="header-dropdown-contacts__buttons">
+                            <a href="./" class="btn">Бесплатный замер</a>
+                            <a href="./" class="btn btn-violet">
+                                Заказать проект
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header-dropdown-contacts__center">
+                        <div class="header-dropdown-contacts__contacts">
+                            <div class="header-dropdown-contacts__column">
+                                <div class="header-dropdown-contacts__icon">
+                                    <img src="img/icon/phone2.svg" alt="">
+                                </div>
+                                <div class="header-dropdown-contacts__text">
+                                    <a href="tel:74954566554" class="header-dropdown-contacts__link1">+ 7 (495)
+                                        456-65-54</a>
+                                    <a href="./" data-popup="#free-measurement"
+                                        class="header-dropdown-contacts__link2">Заказать
+                                        звонок</a>
+                                </div>
+                            </div>
+                            <div class="header-dropdown-contacts__column">
+                                <div class="header-dropdown-contacts__icon">
+                                    <img src="img/icon/mail.svg" alt="">
+                                </div>
+                                <div class="header-dropdown-contacts__text">
+                                    <a href="mailto:info@haierkuchni.ru" class="header-dropdown-contacts__link1">
+                                        info@haierkuchni.ru
+                                    </a>
+                                    <a href="./" class="header-dropdown-contacts__link2">По вопросам и предложениям</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="./" data-popup="#leave-request" class="btn">
+                            <span>Записаться в салон</span>
+                            <img loading="lazy" src="img/icon/arrow3.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="header-dropdown-contacts__bottom">
+                        <p>
+                            Отвечаем на любые вопросы, делимся событиями:
+                        </p>
+                        <div class="header-dropdown-contacts__button">
+                            <a href="./" class="btn btn-black">Написать нам</a>
+                            <div class="header-dropdown-contacts__socials">
+                                <a href="./">
+                                    <img loading="lazy" src="img/icon/vk.svg" alt="">
+                                </a>
+                                <a href="./">
+                                    <img loading="lazy" src="img/icon/telegram.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-dropdown header-dropdown-buyer">
+            <div class="header-dropdown__body">
+                <div class="header-dropdown-menu1">
+                    <div class="header-dropdown-menu1__item">
+                        <a href="./" class="header-dropdown-menu1__button">
+                            <span>Доставка и оплата</span>
+                            <div class="header-dropdown-menu1__arrow">
+                                <img src="img/icon/arrow2.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="header-dropdown-menu1__item">
+                        <a href="./" class="header-dropdown-menu1__button">
+                            <span>Сборка и монтаж</span>
+                            <div class="header-dropdown-menu1__arrow">
+                                <img src="img/icon/arrow2.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="header-dropdown-menu1__item">
+                        <a href="./" class="header-dropdown-menu1__button">
+                            <span>Условия монтажа</span>
+                            <div class="header-dropdown-menu1__arrow">
+                                <img src="img/icon/arrow2.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="header-dropdown-menu1__item">
+                        <a href="./" class="header-dropdown-menu1__button">
+                            <span>Гарантия</span>
+                            <div class="header-dropdown-menu1__arrow">
+                                <img src="img/icon/arrow2.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="./" class="header-dropdown-banner header-dropdown-banner2">
+                    <img src="img/image1.webp" alt="" class="header-dropdown-banner__bg">
+                    <div class="header-dropdown-banner__top">
+                        <div class="header-dropdown-banner__title">
+                            Кухня и техника:<br>
+                            выгода до 20%
+                        </div>
+                    </div>
+                    <div class="btn btn-white">Подробнее</div>
+                </a>
+            </div>
+        </div>
+        <div class="header-dropdown header-dropdown-project">
+            <div class="header-dropdown__body">
+                <div class="header-dropdown-menu1">
+                    <div class="header-dropdown-menu1__item">
+                        <a href="./" class="header-dropdown-menu1__button">
+                            <img src="img/image8.webp" alt="" class="header-dropdown-menu1__pic1">
+                            <span>ЖК «Сердце столицы»</span>
+                            <div class="header-dropdown-menu1__arrow">
+                                <img src="img/icon/arrow2.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="./" class="header-dropdown-banner">
+                    <img src="img/image14.webp" alt="" class="header-dropdown-banner__bg">
+                    <div class="header-dropdown-banner__top">
+                        <div class="header-dropdown-banner__title">
+                            Все проекты
+                        </div>
+                        <div class="header-dropdown-banner__arrow">
+                            <img loading="lazy" src="img/icon/arrow3.svg" alt="">
+                        </div>
+                    </div>
+                    <p>
+                        Оцените результаты<br>
+                        наших работ
+                    </p>
+                </a>
+            </div>
         </div>
     </div>
 </header>
