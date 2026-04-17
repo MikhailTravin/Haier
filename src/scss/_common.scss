@@ -100,7 +100,8 @@ body {
 
   .menu-open &,
   .buyer-open &,
-  .project-open & {
+  .project-open &,
+  .catalog-open & {
     overflow: hidden;
 
     &::before {
@@ -116,7 +117,8 @@ body {
     }
   }
   .buyer-open &,
-  .project-open & {
+  .project-open &,
+  .catalog-open & {
     &::before {
       content: "";
       @media (max-width: 1200px) {
