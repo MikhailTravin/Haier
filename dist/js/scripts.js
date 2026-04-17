@@ -2062,22 +2062,21 @@ if (searchButton && searchInput) {
 const iconMenu = document.querySelector('.header-bottom__burger');
 const btnBuyer = document.querySelector('.btn-buyer');
 const btnProject = document.querySelector('.btn-project');
+const btnCatalog = document.querySelector('.header-bottom__catalog');
 const headerTop = document.querySelectorAll('.header-dropdown__body');
 
 const isMobile = () => window.innerWidth <= 1200;
 const isInsideHeader = (target) => headerTop && Array.from(headerTop).some(el => el.contains(target));
 
 const close = (className) => document.documentElement.classList.remove(className);
-const closeAll = () => ['menu-open', 'buyer-open', 'project-open'].forEach(close);
+const closeAll = () => ['menu-open', 'buyer-open', 'project-open', 'catalog-open'].forEach(close);
 const closeExcept = (keepClass) => {
-  ['menu-open', 'buyer-open', 'project-open'].forEach(c => c !== keepClass && close(c));
+  ['menu-open', 'buyer-open', 'project-open', 'catalog-open'].forEach(c => c !== keepClass && close(c));
 };
 
-// Ресайз
 window.addEventListener('resize', () => isMobile() && close('buyer-open'));
 if (isMobile()) close('buyer-open');
 
-// Общая функция для кнопок
 function setupToggle(btn, openClass) {
   if (!btn) return;
 
@@ -2103,6 +2102,7 @@ function setupToggle(btn, openClass) {
 setupToggle(iconMenu, 'menu-open');
 setupToggle(btnBuyer, 'buyer-open');
 setupToggle(btnProject, 'project-open');
+setupToggle(btnCatalog, 'catalog-open');
 
 //========================================================================================================================================================
 
@@ -3128,4 +3128,39 @@ if (quizIcons) {
   if (closeButton) {
     closeButton.addEventListener('click', removeQuizDescrOpen);
   }
+}
+
+//========================================================================================================================================================
+
+const filterDropdownButtons = document.querySelectorAll('.header-dropdown-filter__title');
+
+if (filterDropdownButtons) {
+  const filterItems = document.querySelectorAll('.header-dropdown-menu1__item');
+  function filterItemsByCategory(category) {
+    filterItems.forEach(item => {
+      const itemCategory = item.getAttribute('data-filter');
+      if (category === 'all' || itemCategory === category) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  }
+
+  function setActiveButton(activeButton) {
+    filterDropdownButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    activeButton.classList.add('active');
+  }
+
+  filterDropdownButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const filterValue = this.getAttribute('data-filter');
+      filterItemsByCategory(filterValue);
+      setActiveButton(this);
+    });
+  });
+
+  filterItemsByCategory('all');
 }

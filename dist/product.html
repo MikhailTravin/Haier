@@ -53,9 +53,9 @@
 							</a>
 							<ul class="header-bottom__menu">
 								<li>
-									<a href="./" class="header-bottom__catalog">
-										Каталог +
-									</a>
+									<span class="header-bottom__catalog">
+										Каталог <span class="icon">+</span>
+									</span>
 								</li>
 								<li>
 									<span class="btn-project">Проекты</span>
@@ -163,7 +163,7 @@
 							<div class="header-dropdown-contacts">
 								<div class="header-dropdown-contacts__top">
 									<div class="header-dropdown-contacts__buttons">
-										<a href="./" class="btn">Бесплатный замер</a>
+										<a href="./" class="btn btn-border">Бесплатный замер</a>
 										<a href="./" class="btn btn-violet">
 											Заказать проект
 										</a>
@@ -194,7 +194,7 @@
 											</div>
 										</div>
 									</div>
-									<a href="./" data-popup="#leave-request" class="btn">
+									<a href="./" data-popup="#leave-request" class="btn btn-border">
 										<span>Записаться в салон</span>
 										<img loading="lazy" src="img/icon/arrow3.svg" alt="">
 									</a>
@@ -268,15 +268,91 @@
 					</div>
 					<div class="header-dropdown header-dropdown-project">
 						<div class="header-dropdown__body">
-							<div class="header-dropdown-menu1">
-								<div class="header-dropdown-menu1__item">
-									<a href="./" class="header-dropdown-menu1__button">
-										<img src="img/image8.webp" alt="" class="header-dropdown-menu1__pic1">
-										<span>ЖК «Сердце столицы»</span>
-										<div class="header-dropdown-menu1__arrow">
-											<img src="img/icon/arrow2.svg" alt="">
-										</div>
-									</a>
+							<div class="header-dropdown-filter">
+								<div class="header-dropdown-filter__nav">
+									<div data-filter="all" class="header-dropdown-filter__title active">Все</div>
+									<div data-filter="project1" class="header-dropdown-filter__title">Проекты для ТВ</div>
+									<div data-filter="project2" class="header-dropdown-filter__title">Кухни наших клиентов</div>
+								</div>
+								<div class="header-dropdown-menu1">
+									<div data-filter="project1" class="header-dropdown-menu1__item">
+										<a href="./" class="header-dropdown-menu1__button">
+											<img src="img/image8.webp" alt="" class="header-dropdown-menu1__pic1">
+											<span>ЖК «Сердце столицы»</span>
+											<div class="header-dropdown-menu1__arrow">
+												<img src="img/icon/arrow2.svg" alt="">
+											</div>
+										</a>
+									</div>
+									<div data-filter="project2" class="header-dropdown-menu1__item">
+										<a href="./" class="header-dropdown-menu1__button">
+											<img src="img/image8.webp" alt="" class="header-dropdown-menu1__pic1">
+											<span>Кухня из телепроекта
+												«Квартирный вопрос»</span>
+											<div class="header-dropdown-menu1__arrow">
+												<img src="img/icon/arrow2.svg" alt="">
+											</div>
+										</a>
+									</div>
+									<div data-filter="project1" class="header-dropdown-menu1__item">
+										<a href="./" class="header-dropdown-menu1__button">
+											<img src="img/image8.webp" alt="" class="header-dropdown-menu1__pic1">
+											<span>Кухня из телепроекта
+												«Квартирный вопрос»</span>
+											<div class="header-dropdown-menu1__arrow">
+												<img src="img/icon/arrow2.svg" alt="">
+											</div>
+										</a>
+									</div>
+									<div data-filter="project2" class="header-dropdown-menu1__item">
+										<a href="./" class="header-dropdown-menu1__button">
+											<img src="img/image8.webp" alt="" class="header-dropdown-menu1__pic1">
+											<span>ЖК Город-парк
+												«Первый московский»</span>
+											<div class="header-dropdown-menu1__arrow">
+												<img src="img/icon/arrow2.svg" alt="">
+											</div>
+										</a>
+									</div>
+									<div data-filter="project1" class="header-dropdown-menu1__item">
+										<a href="./" class="header-dropdown-menu1__button">
+											<img src="img/image8.webp" alt="" class="header-dropdown-menu1__pic1">
+											<span>ЖК «Сердце столицы»</span>
+											<div class="header-dropdown-menu1__arrow">
+												<img src="img/icon/arrow2.svg" alt="">
+											</div>
+										</a>
+									</div>
+									<div data-filter="project2" class="header-dropdown-menu1__item">
+										<a href="./" class="header-dropdown-menu1__button">
+											<img src="img/image8.webp" alt="" class="header-dropdown-menu1__pic1">
+											<span>Кухня из телепроекта
+												«Квартирный вопрос»</span>
+											<div class="header-dropdown-menu1__arrow">
+												<img src="img/icon/arrow2.svg" alt="">
+											</div>
+										</a>
+									</div>
+									<div data-filter="project1" class="header-dropdown-menu1__item">
+										<a href="./" class="header-dropdown-menu1__button">
+											<img src="img/image8.webp" alt="" class="header-dropdown-menu1__pic1">
+											<span>Кухня из телепроекта
+												«Квартирный вопрос»</span>
+											<div class="header-dropdown-menu1__arrow">
+												<img src="img/icon/arrow2.svg" alt="">
+											</div>
+										</a>
+									</div>
+									<div data-filter="project2" class="header-dropdown-menu1__item">
+										<a href="./" class="header-dropdown-menu1__button">
+											<img src="img/image8.webp" alt="" class="header-dropdown-menu1__pic1">
+											<span>ЖК Город-парк
+												«Первый московский»</span>
+											<div class="header-dropdown-menu1__arrow">
+												<img src="img/icon/arrow2.svg" alt="">
+											</div>
+										</a>
+									</div>
 								</div>
 							</div>
 							<a href="./" class="header-dropdown-banner">
@@ -284,6 +360,190 @@
 								<div class="header-dropdown-banner__top">
 									<div class="header-dropdown-banner__title">
 										Все проекты
+									</div>
+									<div class="header-dropdown-banner__arrow">
+										<img loading="lazy" src="img/icon/arrow3.svg" alt="">
+									</div>
+								</div>
+								<p>
+									Оцените результаты<br>
+									наших работ
+								</p>
+							</a>
+						</div>
+					</div>
+					<div class="header-dropdown header-dropdown-catalog">
+						<div class="header-dropdown__body">
+							<div class="header-dropdown-menu1">
+								<div class="header-dropdown-menu1__item">
+									<a href="./" class="header-dropdown-menu1__button">
+										<span>Кухни на заказ</span>
+										<div class="header-dropdown-menu1__arrow">
+											<img src="img/icon/arrow2.svg" alt="">
+										</div>
+									</a>
+									<div class="header-dropdown-menu2">
+										<div class="header-dropdown-menu2__column">
+											<div class="header-dropdown-menu2__title">По типу:</div>
+											<ul>
+												<li>
+													<a href="./">Современные кухни</a>
+												</li>
+												<li>
+													<a href="./">Классические кухни</a>
+												</li>
+												<li>
+													<a href="./">Лофт</a>
+												</li>
+												<li>
+													<a href="./">Неоклассический</a>
+												</li>
+												<li>
+													<a href="./">Под старину (ретро)
+													</a>
+												</li>
+												<li>
+													<a href="./">Прованс</a>
+												</li>
+												<li>
+													<a href="./">Скандинавский</a>
+												</li>
+											</ul>
+										</div>
+										<div class="header-dropdown-menu2__column">
+											<div class="header-dropdown-menu2__title">По форме:</div>
+											<ul>
+												<li>
+													<a href="./">Прямые</a>
+												</li>
+												<li>
+													<a href="./">Угловые</a>
+												</li>
+												<li>
+													<a href="./">Островные</a>
+												</li>
+												<li>
+													<a href="./">П-образные</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="header-dropdown-menu1__item">
+									<a href="./" class="header-dropdown-menu1__button">
+										<span>Шкафы купе</span>
+										<div class="header-dropdown-menu1__arrow">
+											<img src="img/icon/arrow2.svg" alt="">
+										</div>
+									</a>
+									<div class="header-dropdown-menu2">
+										<div class="header-dropdown-menu2__column">
+											<div class="header-dropdown-menu2__title">По типу:</div>
+											<ul>
+												<li>
+													<a href="./">Современные кухни</a>
+												</li>
+												<li>
+													<a href="./">Классические кухни</a>
+												</li>
+												<li>
+													<a href="./">Лофт</a>
+												</li>
+												<li>
+													<a href="./">Неоклассический</a>
+												</li>
+												<li>
+													<a href="./">Под старину (ретро)
+													</a>
+												</li>
+												<li>
+													<a href="./">Прованс</a>
+												</li>
+												<li>
+													<a href="./">Скандинавский</a>
+												</li>
+											</ul>
+										</div>
+										<div class="header-dropdown-menu2__column">
+											<div class="header-dropdown-menu2__title">По форме:</div>
+											<ul>
+												<li>
+													<a href="./">Прямые</a>
+												</li>
+												<li>
+													<a href="./">Угловые</a>
+												</li>
+												<li>
+													<a href="./">Островные</a>
+												</li>
+												<li>
+													<a href="./">П-образные</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="header-dropdown-menu1__item">
+									<a href="./" class="header-dropdown-menu1__button">
+										<span>Детские</span>
+										<div class="header-dropdown-menu1__arrow">
+											<img src="img/icon/arrow2.svg" alt="">
+										</div>
+									</a>
+									<div class="header-dropdown-menu2">
+										<div class="header-dropdown-menu2__column">
+											<div class="header-dropdown-menu2__title">По типу:</div>
+											<ul>
+												<li>
+													<a href="./">Современные кухни</a>
+												</li>
+												<li>
+													<a href="./">Классические кухни</a>
+												</li>
+												<li>
+													<a href="./">Лофт</a>
+												</li>
+												<li>
+													<a href="./">Неоклассический</a>
+												</li>
+												<li>
+													<a href="./">Под старину (ретро)
+													</a>
+												</li>
+												<li>
+													<a href="./">Прованс</a>
+												</li>
+												<li>
+													<a href="./">Скандинавский</a>
+												</li>
+											</ul>
+										</div>
+										<div class="header-dropdown-menu2__column">
+											<div class="header-dropdown-menu2__title">По форме:</div>
+											<ul>
+												<li>
+													<a href="./">Прямые</a>
+												</li>
+												<li>
+													<a href="./">Угловые</a>
+												</li>
+												<li>
+													<a href="./">Островные</a>
+												</li>
+												<li>
+													<a href="./">П-образные</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a href="./" class="header-dropdown-banner">
+								<img src="img/image14.webp" alt="" class="header-dropdown-banner__bg">
+								<div class="header-dropdown-banner__top">
+									<div class="header-dropdown-banner__title">
+										Рассрочка
+										до 36 месяцев!
 									</div>
 									<div class="header-dropdown-banner__arrow">
 										<img loading="lazy" src="img/icon/arrow3.svg" alt="">
@@ -4249,6 +4509,30 @@
 					{
 						title: "Проекты",
 						url: "./project"
+					},
+					{
+						title: "Контакты",
+						url: "./contacts"
+					},
+					{
+						title: "Контакты - детальная",
+						url: "./contacts-detail"
+					},
+					{
+						title: "Доставка и оплата",
+						url: "./delivery"
+					},
+					{
+						title: "Сборка и монтаж",
+						url: "./sborka-montazh"
+					},
+					{
+						title: "Условия монтажа",
+						url: "./usloviya-montazha"
+					},
+					{
+						title: "Гарантия",
+						url: "./guarantee"
 					},
 				]
 			};
